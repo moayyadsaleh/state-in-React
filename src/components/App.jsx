@@ -1,10 +1,22 @@
 import React from "react";
 import "../styles.css";
 
+function strike() {
+  document.getElementById("root").style.textDecoration = "line-through";
+}
+
+function unstrike() {
+  document.getElementById("root").style.textDecoration = null;
+}
+
 function App() {
-  var isDone = true;
-  const strikeThrough = { textDecoration: "line-through" };
-  return <p style={isDone ? strikeThrough : null}>Buy Milk</p>;
+  return (
+    <div>
+      {" "}
+      <p>Buy Milk</p>;<button onClick={strike}>Change to Strikethrough</button>
+      <button onClick={unstrike}>Change back</button>
+    </div>
+  );
 }
 
 export default App;
